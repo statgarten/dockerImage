@@ -3,12 +3,14 @@ FROM ubuntu:20.04
 # Noninteractive Setting
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common 
+RUN apt-get update && apt-get install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common locales
+
+# Set Locale
+RUN locale-gen en_US.UTF-8
+RUN update-locale LANG=en_US.UTF-8
 
 #Setting for tzdata
 RUN ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
-
-ENV LANG en_US.UTF-8
 
 # statgarten dependencies
 RUN apt-get install -y libssl-dev libcurl4-openssl-dev libxml2-dev cmake
