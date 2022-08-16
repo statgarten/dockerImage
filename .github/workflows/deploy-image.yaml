@@ -40,7 +40,9 @@ jobs:
         tags: |
           dao0312/statgarten:latest
           dao0312/statgarten:${{ env.RELEASE_VERSION }}
+          dao0312/statgarten:${{ steps.meta.outputs.tags }}
           ghcr.io/${{ github.repository_owner }}/statgarten:latest
           ghcr.io/${{ github.repository_owner }}/statgarten:${{ env.RELEASE_VERSION }}
+          ghcr.io/${{ github.repository_owner }}/statgarten:${{ steps.meta.outputs.tags }}
         
       
