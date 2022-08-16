@@ -25,7 +25,6 @@ chmod -R 777 /home/${USER}/ShinyApps
 echo -e LANG=en_US.UTF-8 > /home/shiny/.Renviron
 echo -e LANG=en_US.UTF-8 > /home/${USER}/.Renviron
 
-
 ## Permission
 groupadd shiny-apps 
 usermod -aG shiny-apps ${USER} 
