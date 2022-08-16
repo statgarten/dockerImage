@@ -68,5 +68,7 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
 
 COPY ini.sh /etc/ini.sh
 COPY ShinyApps/app.R /srv/shiny-server/app.R
-
+RUN rm -r /srv/shiny-server/index.html /srv/shiny-server/sample-apps
 EXPOSE 3838
+
+CMD ["/usr/bin/shiny-server"]
