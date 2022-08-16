@@ -42,19 +42,8 @@ RUN R -e "install.packages('remotes')"
 # statgarten dependencies - plotGen
 RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly'))"
 
-RUN R -e "install.packages(c('factoextra', 'rstanarm'))"
-# statgarten dependencies - board
-#RUN R -e "install.packages(c(''))"
-
-# statgarten dependencies - board
-#RUN R -e "install.packages(c(''))"
-
-# statgarten dependencies - scissor
-#RUN R -e "install.packages(c(''))"
-
 # statgarten dependencies - goophi
-#RUN R -e "install.packages(c(''))"
-
+RUN R -e "install.packages(c('factoextra', 'rstanarm'))"
 
 RUN R -e "remotes::install_github('statgarten/plotGen')"
 RUN R -e "remotes::install_github('statgarten/board')"
@@ -68,7 +57,7 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
     gdebi -n ss-latest.deb && \
     rm -f version.txt ss-latest.deb
 
-COPY ini.sh /etc/ini.sh
+#COPY ini.sh /etc/ini.sh
 COPY ShinyApps/app.R /srv/shiny-server/app.R
 RUN rm -r /srv/shiny-server/index.html /srv/shiny-server/sample-apps
 EXPOSE 3838
