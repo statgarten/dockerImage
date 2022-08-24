@@ -13,7 +13,7 @@ RUN update-locale LANG=en_US.UTF-8
 RUN ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
 
 # statgarten dependencies
-RUN apt-get install -y libssl-dev libcurl4-openssl-dev libxml2-dev cmake
+RUN apt-get install -y libssl-dev libcurl4-openssl-dev libxml2-dev libfreetype6-dev cmake 
 
 # shinyserver dependencies
 RUN apt-get install -y wget gdebi
