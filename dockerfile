@@ -13,7 +13,7 @@ RUN update-locale LANG=en_US.UTF-8
 RUN ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
 
 # statgarten dependencies
-RUN apt-get install -y libssl-dev libcurl4-openssl-dev libxml2-dev libfreetype6-dev cmake 
+RUN apt-get install -y libssl-dev libcurl4-openssl-dev libxml2-dev libfreetype6-dev libgdal-dev cmake 
 
 # shinyserver dependencies
 RUN apt-get install -y wget gdebi
@@ -40,11 +40,13 @@ RUN apt-get install -y r-base
 RUN R -e "install.packages('remotes')"
 
 # statgarten dependencies - plotGen
-RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly'))"
+RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet'))"
+RUN R -e "remotes::install_github('vqv/ggbiplot')"
 
 # statgarten dependencies - goophi
 RUN R -e "install.packages(c('factoextra', 'rstanarm'))"
 
+RUN R -e "remotes::install_github('statgarten/datatoys')"
 RUN R -e "remotes::install_github('statgarten/plotGen')"
 RUN R -e "remotes::install_github('statgarten/board')"
 RUN R -e "remotes::install_github('statgarten/scissor')"
