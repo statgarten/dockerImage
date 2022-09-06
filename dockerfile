@@ -40,7 +40,7 @@ RUN apt-get install -y r-base
 RUN R -e "install.packages('remotes')"
 
 # statgarten dependencies - door
-RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet', 'ggparty'))"
+RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet', 'ggparty', 'caret'))"
 RUN R -e "remotes::install_github('vqv/ggbiplot')"
 
 # statgarten dependencies - goophi
