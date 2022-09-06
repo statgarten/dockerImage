@@ -39,8 +39,8 @@ RUN apt-get install -y r-base
 # for install_github
 RUN R -e "install.packages('remotes')"
 
-# statgarten dependencies - plotGen
-RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet'))"
+# statgarten dependencies - door
+RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet', 'ggparty'))"
 RUN R -e "remotes::install_github('vqv/ggbiplot')"
 
 # statgarten dependencies - goophi
