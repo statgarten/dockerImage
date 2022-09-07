@@ -50,7 +50,7 @@ RUN R -e "remotes::install_github('statgarten/datatoys')"
 RUN R -e "remotes::install_github('statgarten/plotGen')"
 RUN R -e "remotes::install_github('statgarten/board')"
 RUN R -e "remotes::install_github('statgarten/scissor')"
-RUN R -e "remotes::install_github('statgarten/goophi')"
+RUN R -e "remotes::install_github('statgarten/stove')"
 RUN R -e "remotes::install_github('statgarten/door')"
 
 RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-18.04/x86_64/VERSION -O "version.txt" && \
