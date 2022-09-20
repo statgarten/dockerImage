@@ -47,7 +47,7 @@ RUN R -e "remotes::install_github('vqv/ggbiplot')"
 RUN R -e "install.packages(c('factoextra', 'rstanarm'))"
 
 RUN R -e "remotes::install_github('statgarten/datatoys')"
-RUN R -e "remotes::install_github('statgarten/plotGen')"
+RUN R -e "remotes::install_github('statgarten/colorpen')"
 RUN R -e "remotes::install_github('statgarten/board')"
 RUN R -e "remotes::install_github('statgarten/scissor')"
 RUN R -e "remotes::install_github('statgarten/stove')"
