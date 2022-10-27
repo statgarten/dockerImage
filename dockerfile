@@ -43,6 +43,12 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet', 'ggparty', 'caret'))"
 RUN R -e "remotes::install_github('vqv/ggbiplot')"
 
+# statgarten dependencies - soroban
+RUN R -e "install.packages(c('showtext'))"
+
+# statgarten depencencies - scissor
+RUN R -e "install.packages(c('RSQLite', 'sortable', 'writexl'))"
+
 # statgarten dependencies - goophi
 RUN R -e "install.packages(c('factoextra', 'rstanarm'))"
 
@@ -51,6 +57,7 @@ RUN R -e "remotes::install_github('statgarten/colorpen')"
 RUN R -e "remotes::install_github('statgarten/board')"
 RUN R -e "remotes::install_github('statgarten/scissor')"
 RUN R -e "remotes::install_github('statgarten/stove')"
+RUN R -e "remotes::install_github('statgarten/soroban')"
 RUN R -e "remotes::install_github('statgarten/door')"
 
 RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-18.04/x86_64/VERSION -O "version.txt" && \
