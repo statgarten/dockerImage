@@ -40,7 +40,7 @@ RUN apt-get install -y r-base
 RUN R -e "install.packages('remotes')"
 
 # statgarten dependencies - door
-RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet', 'ggparty', 'caret'))"
+RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet', 'ggparty', 'caret', 'reactable', 'ggpie'))"
 RUN R -e "remotes::install_github('vqv/ggbiplot')"
 
 # statgarten dependencies - soroban
@@ -69,6 +69,7 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
 #COPY ini.sh /etc/ini.sh
 COPY ShinyApps/app.R /srv/shiny-server/app.R
 RUN rm -r /srv/shiny-server/index.html /srv/shiny-server/sample-apps
+RUN chmod 777 -R /tmp
 EXPOSE 3838
 
 CMD ["/usr/bin/shiny-server"]
