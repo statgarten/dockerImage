@@ -45,6 +45,12 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages(c('dplyr', 'httr', 'rvest', 'xml2', 'tidyverse', 'plotly', 'leaflet', 'ggparty', 'caret', 'reactable', 'ggpie', 'naniar'))"
 RUN R -e "remotes::install_github('vqv/ggbiplot')"
 
+# statgarten dependencies - board
+RUN R -e "install.packages(c('shinydashboardPlus'))"
+
+# statgarten dependencies - colorpen
+RUN R -e "install.packages(c('shiny.i18n'))"
+
 # statgarten dependencies - soroban
 RUN R -e "install.packages(c('showtext'))"
 
