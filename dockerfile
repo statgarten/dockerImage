@@ -62,7 +62,7 @@ RUN R -e "install.packages(c('RSQLite', 'sortable', 'writexl'))"
 
 # statgarten dependencies - goophi
 RUN R -e "install.packages(c('factoextra', 'rstanarm'))"
-
+RUN R -e "remotes::install_github('statgarten/datatoys')"
 RUN R -e "remotes::install_github('statgarten/board')"
 RUN R -e "remotes::install_github('statgarten/stove')"
 RUN R -e "remotes::install_github('statgarten/colorpen')"
