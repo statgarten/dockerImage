@@ -3,6 +3,14 @@ on:
   push:
     tags:
       - "v*"
+    paths:
+      - "statgarten/door/**"
+      - "statgarten/datatoys/**"
+      - "statgarten/shiny.likert/**"
+      - "statgarten/stove/**"
+      - "statgarten/colorpen/**"
+      - "statgarten/soroban/**"
+      - "statgarten/scissor/**"
 
 jobs:
   build-and-push-image:
