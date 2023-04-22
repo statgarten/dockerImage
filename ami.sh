@@ -35,10 +35,11 @@ rm shiny-server-1.5.20.1002-amd64.deb
 
 # Edit Shiny-server.conf
 sudo sed -i 's/run_as shiny/run_as ubuntu/g' /etc/shiny-server/shiny-server.conf
-sudo sed -i 's/listen 3838/listen 8080/g' /etc/shiny-server/shiny-server.conf
+sudo sed -i 's/listen 3838/listen 80/g' /etc/shiny-server/shiny-server.conf
 
 sudo rm -r /srv/shiny-server/*
 sudo echo "library(door)" > /srv/shiny-server/app.R
 sudo echo "door::run_app()" >> /srv/shiny-server/app.R
 
+sudo systemctl stop shiny-server
 sudo /usr/bin/shiny-server
