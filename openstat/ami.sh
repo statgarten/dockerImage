@@ -1,3 +1,4 @@
+export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update && sudo apt-get install -y git
 
 # Install R
@@ -35,3 +36,10 @@ sudo systemctl stop shiny-server
 # Edit Shiny-server.conf
 sudo sed -i 's/run_as shiny/run_as ubuntu/g' /etc/shiny-server/shiny-server.conf
 sudo sed -i 's/listen 3838/listen 80/g' /etc/shiny-server/shiny-server.conf
+
+# Clean and Clone apps at shiny server directory
+sudo rm -r /srv/shiny-server/*
+sudo cp -r /home/ubuntu/dockerImage/openstat/app/* /srv/shiny-server
+
+# Run Shiny-server
+sudo /usr/bin/shiny-server &
