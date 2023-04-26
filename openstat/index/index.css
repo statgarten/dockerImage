@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "GowunDodum-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SEBANG_Gothic_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HangeulNuri-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "EliceDigitalBaeum_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.leftalign {
+  text-align: left;
+}
+
+.rightalign {
+  text-align: right;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+body {
+  padding-top: 58px;
+}
+
+ul {
+  background-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+#greeting {
+  padding-top: 3%;
+}
+
+a:hover{
+  color: #000000 !important; /* ignore bootstrap a:hover*/
+}
+
+.cta {
+  position: fixed;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 88%;
+  max-width: 500px;
+  height: 48px;
+  background-color: #233e1e;
+  color: #0d0d0d;
+  z-index: 1000000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  transition: 300ms;
+  box-shadow: 0px 0px 4px 2px rgba(55, 53, 47, 0.4);
+  font-family: "inter", sans-serif;
+  cursor: pointer;
+}
+
+.cta:hover {
+  filter: brightness(88%);
+}
+
+.navbar {
+  font-family: "EliceDigitalBaeum_Bold";
+}
+
+#hello, #goLogin {
+  font-family: "HangeulNuri-Bold";
+}
+
+#openApp {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+a {
+  color: black;
+}
+
+@-webkit-keyframes fadeUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.container {
+  transform: translateY(50px);
+  opacity: 0;
+  -webkit-animation: 400ms ease fadeUp;
+          animation: 400ms ease fadeUp;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.list-group-item {
+  height: 100%;
+}/*# sourceMappingURL=index.css.map */
