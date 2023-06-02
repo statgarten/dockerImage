@@ -11,6 +11,8 @@ on:
       - "statgarten/colorpen/**"
       - "statgarten/soroban/**"
       - "statgarten/scissor/**"
+  repository_dispatch:
+    types: [statgarten_update]
 
 jobs:
   build-and-push-image:
