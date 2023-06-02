@@ -19,7 +19,7 @@ jobs:
             statgarten/dockerImage
 
       - name: Set TAG env
-        run: echo "RELEASE_VERSION=${github.event.client_payload.tag}" >> $GITHUB_ENV
+        run: echo "RELEASE_VERSION=${{github.event.client_payload.tag}}" >> $GITHUB_ENV
 
       - name: Metadata
         run: echo "container tag will be 'lastest' and '${{ env.RELEASE_VERSION }}'"
