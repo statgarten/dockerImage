@@ -23,18 +23,9 @@ COPY --from=build /usr/local/lib/R/site-library/ /usr/local/lib/R/site-library
 COPY ShinyApps/app.R /srv/shiny-server/app.R
 RUN rm -r /srv/shiny-server/index.html /srv/shiny-server/sample-apps
 
-# install TeX
-RUN apt-get install -y texlive-base texlive-latex-base texlive-latex-extra
-USER shiny
-RUN tlmgr init-usertree
-RUN tlmgr option repository http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2019/tlnet-final
-RUN tlmgr install pdftexcmds --verify-repo=none
-RUN tlmgr install infwarerr --verify-repo=none
-RUN tlmgr install pdfescape --verify-repo=none
-RUN tlmgr install letltxmacro --verify-repo=none
-USER root
-RUN R -e "install.packages('tinytex')"
-RUN R -e "tinytex::install_tinytex(force = TRUE)"
+# Install TeX
+RUN apt-get install texlive-full
+RUN tlmgr install setspace
 
 EXPOSE 3838
 # USER root
