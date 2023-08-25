@@ -1,16 +1,9 @@
-name: Build and Push Docker Image Manually(Core)
+name: Build and Push Docker Image Manually(Full Package)
 on:
-  push:
-    tags:
-      - "v*"
-    paths:
-      - "statgarten/door/**"
-      - "statgarten/datatoys/**"
-      - "statgarten/shiny.likert/**"
-      - "statgarten/stove/**"
-      - "statgarten/colorpen/**"
-      - "statgarten/soroban/**"
-      - "statgarten/scissor/**"
+  workflow_run:
+    workflows: ["Build and Push Docker Image Manually(Core)"]
+    types:
+      - completed
 
 jobs:
   build-and-push-image:
@@ -54,5 +47,7 @@ jobs:
         with:
           push: true
           tags: |
-            dao0312/statgarten:${{ env.RELEASE_VERSION }}_${{github.ref_name}}_core
-            ghcr.io/${{ github.repository_owner }}/statgarten:${{ env.RELEASE_VERSION }}_${{github.ref_name}}_core
+            dao0312/statgarten:latest
+            dao0312/statgarten:${{ env.RELEASE_VERSION }}
+            ghcr.io/${{ github.repository_owner }}/statgarten:latest
+            ghcr.io/${{ github.repository_owner }}/statgarten:${{ env.RELEASE_VERSION }}
