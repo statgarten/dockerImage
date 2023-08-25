@@ -52,7 +52,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: core.dockerfile
+          file: core.dockerfile
           push: true
           tags: |
             dao0312/statgarten:${{ env.RELEASE_VERSION }}_${{github.ref_name}}_core
