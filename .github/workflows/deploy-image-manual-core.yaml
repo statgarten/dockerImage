@@ -1,4 +1,4 @@
-name: Build and Push Docker Image Manually
+name: Build and Push Docker Image Manually(Full Package)
 on:
   push:
     tags:

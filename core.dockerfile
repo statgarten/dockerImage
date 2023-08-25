@@ -23,10 +23,6 @@ COPY --from=build /usr/local/lib/R/site-library/ /usr/local/lib/R/site-library
 COPY ShinyApps/app.R /srv/shiny-server/app.R
 RUN rm -r /srv/shiny-server/index.html /srv/shiny-server/sample-apps
 
-# Install TeX
-RUN apt-get install -y texlive-full
-RUN tlmgr install setspace
-
 EXPOSE 3838
 # USER root
 #CMD ["bash"]
