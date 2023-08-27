@@ -1,52 +1,45 @@
-name: Build and Push Docker Image on Another Statgarten Dependency Update
+# name: Build and Push Docker Image on Another Statgarten Dependency Update
 
-on:
-  repository_dispatch:
-    types: [statgarten_update]
+# on:
+#   repository_dispatch:
+#     types: [statgarten_update]
 
-jobs:
-  build-and-push-image:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+# jobs:
+#   build-and-push-image:
+#     runs-on: ubuntu-20.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-        with:
-          images: |
-            statgarten/dockerImage
+#       - name: Extract metadata (tags, labels) for Docker
+#         id: meta
+#         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+#         with:
+#           images: |
+#             statgarten/dockerImage
 
-      - name: Set TAG env
-        run: echo "RELEASE_VERSION=${{github.event.client_payload.tag}}" >> $GITHUB_ENV
+#       - name: Set TAG env
+#         run: echo "RELEASE_VERSION=v$(date +'%Y%m%d')" >> $GITHUB_ENV
 
-      - name: Metadata
-        run: echo "container tag will be 'lastest' and '${{ env.RELEASE_VERSION }}'"
+#       - name: Metadata
+#         run: echo "container tag will be 'lastest' and '${{ env.RELEASE_VERSION }}'"
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v1
 
-      - name: Login to DockerHub/
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+#       - name: Login to DockerHub/
+#         uses: docker/login-action@v1
+#         with:
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
-
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: |
-            dao0312/statgarten:latest
-            dao0312/statgarten:${{ env.RELEASE_VERSION }}_${{github.ref_name}}
-            ghcr.io/${{ github.repository_owner }}/statgarten:latest
-            ghcr.io/${{ github.repository_owner }}/statgarten:${{ env.RELEASE_VERSION }}_${{github.ref_name}}
+#       - name: Login to GitHub Container Registry
+#         uses: docker/login-action@v2
+#         with:
+#           file: core.dockerfile
+#           push: true
+#           tags: |
+#             dao0312/statgarten:latest
+#             dao0312/statgarten:${{ env.RELEASE_VERSION }}
+#             ghcr.io/${{ github.repository_owner }}/statgarten:latest
+#             ghcr.io/${{ github.repository_owner }}/statgarten:${{ env.RELEASE_VERSION }}

@@ -11,6 +11,8 @@ on:
       - "statgarten/colorpen/**"
       - "statgarten/soroban/**"
       - "statgarten/scissor/**"
+  repository_dispatch:
+    types: [statgarten_update]
 
 jobs:
   build-and-push-image:
@@ -27,7 +29,12 @@ jobs:
             statgarten/dockerImage
 
       - name: Set TAG env
+        if: github.event_name == 'push'
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Set TAG env
+        if: github.event_name == 'repository_dispatch'
+        run: echo "RELEASE_VERSION=v$(date +'%Y%m%d')" >> $GITHUB_ENV
 
       - name: Metadata
         run: echo "container tag will be 'lastest' and '${{ env.RELEASE_VERSION }}'"
