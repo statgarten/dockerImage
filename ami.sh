@@ -17,4 +17,4 @@ sudo apt-get install -y docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING 
 
 sudo docker pull dao0312/statgarten:latest
 
-sudo docker run -itd -p 3838:3838 dao0312/statgarten:latest
+sudo docker run -itd -p 80:3838 dao0312/statgarten:latest
