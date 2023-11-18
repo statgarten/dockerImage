@@ -1,4 +1,4 @@
-# Statgarten Docker Image
+# Statgarten Docker Image <img src = 'image/logo.png' width = 120 align = 'right'>
 ​
 ## 개요
 ​
