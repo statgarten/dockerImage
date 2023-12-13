@@ -1,0 +1,10 @@
+FROM rocker/shiny:4.3.2
+COPY prerequisites.R /tmp/prerequisites.R
+RUN Rscript /tmp/prerequisites.R
+COPY index/ /app/
+COPY app/ /app/
+
+COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
+
+EXPOSE 3838 
+

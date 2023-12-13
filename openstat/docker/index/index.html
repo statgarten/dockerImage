@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Apache License 2.0 |  Copyright 2018 Zarathu Co.,Ltd  All rights reserved. -->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA  -Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Openstat.ai</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" /> -->
+		<script src="https://kit.fontawesome.com/36765f9d4c.js" crossorigin="anonymous"></script>
+		<!-- font awesome -->
+		<link href="index.css" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="/img/favicon.ico" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#051f20" id="navbar"
+  aria-label="Third navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img class="" width="40" height="40" id="logo"
+        src="img/logoonly_white.png"></img>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarrelease"
+      aria-controls="navbarrelease" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarrelease">
+      <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+		<a class="nav-item nav-link active" href="https://www.zarathu.com"><i class="fa fa-external-link-square"></i> 차라투 홈페이지</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+		<div class="container" id="mainframe">
+			<div id="greeting">
+				<h1 class="leftalign" id="hello">Openstat</h1>
+				<h2>For mor information, Please visit <a href="https://github.com/statgarten">Statgarten Project</a></h2>
+			</div>
+			<div id="openApp">
+				<h2>OpenApp</h2>
+				<h5>Openstat.ai에서 제공하는 무료 오픈소스 통계 분석 웹앱입니다.</h5>
+				<br />
+				<ul id="generalApp" class="list-group">
+					<h3 class="introTitle"><i class="fa fa-area-chart"></i>General Apps</h3>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-3">
+								<img src="img/basicStatistics.gif" />
+							</div>
+							<div class="col">
+								<h3>Basic Statistics</h3>
+								<p>After data upload, you can get descriptive statistics and regression results.</p>
+								<p>
+									<a href="basic/" class="link-dark"><i class="fa fa-arrow-right"></i>바로가기</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-3">
+								<img src="img/propensityScoreAnalysis.png" />
+							</div>
+							<div class="col">
+								<h3>Propensity Score Anaylsis</h3>
+								<p>After data upload, you can run propensity score analysis.</p>
+								<p>
+									<a href="ps/" class="link-dark"><i class="fa fa-arrow-right"></i>바로가기</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-3">
+								<img src="img/repeatedMeasureAnalysis.png" />
+							</div>
+							<div class="col">
+								<h3>Repeated Measure Analysis</h3>
+								<p>After repeated variable setting, you can run GEE and marginal survival analysis.</p>
+								<p>
+									<a href="repeated/" class="link-dark"><i class="fa fa-arrow-right"></i>바로가기</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-3">
+								<img src="img/surveyDataAnalysis.png" />
+							</div>
+							<div class="col">
+								<h3>Survey Data Analysis</h3>
+								<p>After survey parameter setting, you can run survey data analsys.</p>
+								<p>
+									<a href="survey/" class="link-dark"><i class="fa fa-arrow-right"></i>바로가기</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-3">
+								<img src="img/jsmodule.gif" />
+							</div>
+							<div class="col">
+								<h3>JSModule</h3>
+								<p>If data file size bigger than 5 MB, you can use Rstudio Addins in 'jsmodule' R package.</p>
+								<p>
+									<a href="https://github.com/jinseob2kim/jsmodule" class="link-dark"><i class="fa fa-arrow-right"></i>바로가기</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-3">
+								<img src="img/metaAnalysis.png" />
+							</div>
+							<div class="col">
+								<h3>Meta Analysis</h3>
+								<p>Input individual results, get meta analysis result with forest plot.</p>
+								<p>
+									<a href="meta-analysis/" class="link-dark"><i class="fa fa-arrow-right"></i>바로가기</a>
+								</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<br />
+			</div>
+			<!-- <div id="recommendation">
+      <p>더 자세하고 개인화된 맞춤형 분석 웹이 필요하신가요?</p>
+      <p><a href="#">여기를 눌러서 문의하기.</a></p>
+  </div> -->
+		</div>
+		<footer class="footer mt-auto py-3">
+			<div class="row">
+				<div class="container col-3" style="text-align: center;">
+					<span><i class="fa fa-copyright"></i>2022 Zarathu Co., Ltd.</span>
+				</div>
+			</div>
+		</footer>
+		<!--  End -->
+		<!-- jQuery JS -->
+		<script src="jquery-3.6.0.js"></script>
+		<!-- Development version -->
+		<!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script> -->
+		<!-- Bootstrap JS -->
+	</body>
+</html>
