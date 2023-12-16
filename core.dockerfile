@@ -15,6 +15,8 @@ RUN R -e "remotes::install_github('statgarten/stove', ask=FALSE)"
 RUN R -e "remotes::install_github('statgarten/colorpen', ask=FALSE)"
 RUN R -e "remotes::install_github('statgarten/soroban', ask=FALSE)"
 RUN R -e "remotes::install_github('statgarten/door', ask=FALSE)"
+RUN R -e "remove.packages('lightgbm')"
+RUN R -e "install.packages('lightgbm', version = '3.3.5')"
 
 FROM rocker/shiny:4.3.1
 RUN apt-get update
